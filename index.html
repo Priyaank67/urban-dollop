@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Anthony's School, Kurseong — Comprehensive Unofficial Archive</title>
+    
+    <!-- Google Fonts: Editorial Serif & Clean Geometric Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Advanced Web Reset & Variable System */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-deep: #050b14;
+            --panel-glass: rgba(6, 15, 28, 0.85);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --gold-bright: #e2b659;
+            --gold-glow: rgba(226, 182, 89, 0.2);
+            --text-pure: #ffffff;
+            --text-body: #cbd5e1;
+            --text-dim: #64748b;
+        }
+
+        /* Modernized Elegant Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-bright);
+            border-radius: 20px;
+            border: 2px solid var(--bg-deep);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-body);
+            background-color: var(--bg-deep);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* High-Definition Fixed Ambiance Background */
+        .scenic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            /* Ultra-high res misty Himalayan atmospheric landscape matching Kurseong's climate */
+            background-image: linear-gradient(to bottom, rgba(5, 11, 20, 0.4), var(--bg-deep)), 
+                              url('https://images.unsplash.com/photo-1486873249359-2731bd6dafc7?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            transform: scale(1.02);
+        }
+
+        /* Ambient subtle lightning/mist glow overlay */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle at 10% 30%, rgba(226, 182, 89, 0.03), transparent 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Interactive Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 6%;
+            background: rgba(5, 11, 20, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glass);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header-logo h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold-bright);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .header-logo p {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-pure);
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-pure);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold-bright);
+            text-shadow: 0 0 8px var(--gold-glow);
+        }
+
+        /* Top Author Credit Badge styling */
+        .credit-badge {
+            background: rgba(226, 182, 89, 0.15);
+            border: 1px solid var(--gold-bright);
+            color: var(--gold-bright);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Core Container Layout */
+        .main-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 160px 24px 80px 24px;
+        }
+
+        /* Giant Welcoming Text Hero Area */
+        .hero-block {
+            text-align: center;
+            padding: 40px 0 80px 0;
+        }
+
+        .hero-block h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.8rem;
+            color: var(--text-pure);
+            line-height: 1.15;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-block p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #a8b2d1;
+            line-height: 1.8;
+        }
+
+        /* Super Thorough Content Document Modules */
+        .document-card {
+            background: var(--panel-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 60px 50px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            transition: border-color 0.4s ease;
+        }
+
+        .document-card:hover {
+            border-color: rgba(226, 182, 89, 0.3);
+        }
+
+        .document-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--gold-bright);
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(226, 182, 89, 0.2);
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .document-card h3 span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+        }
+
+        .document-card p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        /* Inside Subsections */
+        .sub-header {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: var(--text-pure);
+            margin: 35px 0 15px 0;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sub-header::before {
+            content: '▪';
+            color: var(--gold-bright);
+        }
+
+        /* Bulleted Technical Lists */
+        .info-list {
+            list-style: none;
+            margin-bottom: 30px;
+            padding-left: 5px;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .info-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold-bright);
+            font-weight: bold;
+        }
+
+        /* Beautiful Scholastic Blockquote */
+        blockquote {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            border-left: 4px solid var(--gold-bright);
+            padding: 10px 0 10px 25px;
+            margin: 35px 0;
+            background: rgba(255,255,255,0.02);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Complex Numerical Metrics Block */
+        .metric-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .matrix-cell {
+            background: rgba(4, 9, 18, 0.7);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .matrix-cell:hover {
+            transform: translateY(-5px);
+            background: rgba(4, 9, 18, 0.9);
+        }
+
+        .matrix-cell h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--gold-bright);
+            margin-bottom: 5px;
+        }
+
+        .matrix-cell p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-pure);
+            margin-bottom: 0;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Explicit Footer Credit Section */
+        .footer-credit-block {
+            border-top: 1px solid var(--border-glass);
+            background: rgba(3, 7, 13, 0.95);
+            padding: 60px 24px;
+            text-align: center;
+            margin-top: 80px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-credit-block h5 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--gold-bright);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .footer-credit-block p {
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            color: var(--text-dim);
+        }
+
+        .author-badge-footer {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid rgba(226, 182, 89, 0.4);
+            padding: 12px 30px;
+            border-radius: 8px;
+            color: var(--text-pure);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .author-badge-footer span {
+            color: var(--gold-bright);
+        }
+
+        /* Mobile Optimization Rules */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px 10px;
+                text-align: center;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-block h2 {
+                font-size: 2.3rem;
+            }
+            .document-card {
+                padding: 40px 20px;
+            }
+            .document-card h3 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Visual Canvas Layer Components -->
+    <div class="scenic-background"></div>
+    <div class="ambient-glow"></div>
+
+    <!-- Navigation Header Block -->
+    <header>
+        <div class="header-logo">
+            <h1>St. Anthony's School</h1>
+            <p>Kurseong &bull; Unofficial Monograph</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#history">Genesis</a></li>
+                <li><a href="#geography">Topography</a></li>
+                <li><a href="#academics">Structure</a></li>
+                <li><a href="#legacy">Legends & Lore</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Dynamic Layout Wrapper -->
+    <div class="main-wrapper">
+        
+        <!-- Welcoming Hero Intro -->
+        <div class="hero-block">
+            <div class="credit-badge">Lead Researcher: Priyaank Pradhan (6A)</div>
+            <h2>An Uncompromising Deep-Dive into the History and Legacy of St. Anthony's</h2>
+            <p>"An exhaustive chronological and sociological documentation detailing the establishment, mountain topography, strict academic frameworks, and legendary personalities of Kurseong's premier hill school."</p>
+        </div>
+
+        <!-- Section 1: Deep Genesis -->
+        <div class="document-card" id="history">
+            <h3>01. The Historical Genesis <span>Est. March 13, 1991</span></h3>
+            <p>The operational realization of St. Anthony’s School occurred on **March 13, 1991**. It was built upon the shared visions of four distinct educationalists and visionaries who sought to establish an exceptional English-medium day-and-boarding institution within the lower ranges of the Darjeeling hills. The school started from very humble foundations—navigating the acute logistical hardships, freezing winters, and isolated geographical realities characteristic of the region. In its initial term, the institution operated with an incredibly tiny student roster and a small, highly dedicated core of pioneering teachers.</p>
+            
+            <p>Originally, the educational framework was limited to lower primary segments, where the highest attainable grade was only Class V. However, under the careful management of the St. Anthony's Academic Society, the physical layout evolved steadily. Brick by brick, multiple residential dormitories, expansive classroom blocks, and modern scientific laboratory wings were built. A massive institutional milestone occurred in **2016**; as the school proudly celebrated its **Silver Jubilee (25 Years)** of educational service, it concurrently sent up its very first official batch of Higher Secondary students for the final ISC examinations, fulfilling the primary long-term dream of its founders.</p>
+        </div>
+
+        <!-- Section 2: Detailed Topography -->
+        <div class="document-card" id="geography">
+            <h3>02. Topographical Footprint & Atmosphere <span>Giddha Pahar Ridge</span></h3>
+            <p>Geographically, St. Anthony’s School boasts one of the most uniquely inspiring environments in West Bengal. The campus is mapped out over roughly **15 scenic acres** along **National Highway 55 (The Legendary Hill Cart Road)**, resting precisely 2 kilometers outside the core township of Kurseong. Perched directly atop the narrow, dramatic incline of **Giddha Pahar**, the school grounds serve as a structural lookout point over the vast topography below.</p>
+            
+            <blockquote>
+                "To look out from the school ridges is to look directly down into the emerald expanse of the Rohini Valley on one side, while the opposite view reveals the awe-inspiring silhouettes of the snow-clad Himalayan mountain ranges."
+            </blockquote>
+            
+            <p>This sub-alpine altitude completely isolates the student base from heavy commercial noise. The campus is regularly enveloped in low-hanging mountain mist, crisp Himalayan breezes, and old-growth pine weather patterns. This natural scenery provides an unmatched, peaceful sanctuary where boarders and day scholars can immerse themselves in rigorous thought, completely synchronized with nature.</p>
+        </div>
+
+        <!-- Section 3: Rigorous Academic Architecture -->
+        <div class="document-card" id="academics">
+            <h3>03. Scholastic Framework & Parameters <span>CISCE Protocol</span></h3>
+            <p>St. Anthony's operates strictly under the rigorous curriculum of the **Council for the Indian School Certificate Examinations (CISCE)** based in New Delhi. The school structure provides graded pedagogical paths that transform children into self-reliant, globally conscious citizens. The school functions under a Co-Educational pattern, integrating residential boarders and day students under a singular behavioral standard.</p>
+            
+            <div class="sub-header">Strict Rules for Admission & Promotion</div>
+            <p>Unlike standard schools, St. Anthony's maintains exceptionally tight, selective entry barriers to preserve classroom performance balance:</p>
+            <ul class="info-list">
+                <li><strong>Primary Entry Matrix:</strong> Standard fresh admissions are strictly limited to Classes III through VII for the ICSE track.</li>
+                <li><strong>Higher Secondary Stream Lock:</strong> Fresh entries are reopened at the Class XI milestone for specializations within the ISC Board.</li>
+                <li><strong>Absolute Enrolment Bans:</strong> Due to continuous curriculum tracks, the school enforces an absolute zero-admission policy for Classes VIII, IX, X, and XII.</li>
+                <li><strong>ISC Specialized Streams:</strong> Higher secondary students select from three highly competitive academic divisions: Science, Commerce, and the Humanities.</li>
+            </ul>
+
+            <div class="metric-matrix">
+                <div class="matrix-cell">
+                    <h4>CISCE</h4>
+                    <p>National Affiliation</p>
+                </div>
+                <div class="matrix-cell">
+                    <h4>Class 3 - 12</h4>
+                    <p>Operational Range</p>
+                </div>
+                <div class="matrix-cell">
+                    <h4>15 Acres</h4>
+                    <p>Campus Footprint</p>
+                </div>
+                <div class="matrix-cell">
+                    <h4>100%</h4>
+                    <p>ICSE/ISC Target Pass</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Culture & Legends -->
+        <div class="document-card" id="legacy">
+            <h3>04. Cultural Fabric, Lore & Campus Legends <span>"Ora et Labora"</span></h3>
+            <p>The beating heart of St. Anthony's relies on its historic Latin motto: <strong>“Ora et Labora”</strong>, which translates directly to <em>“Pray and Work”</em>. Rather than relying solely on raw test-score metrics, the school focuses deeply on long-term character building and independent thinking. It is an active member of the **AHLIS (Association of Heads of Listed ICSE Schools)**, consistently hosting and winning inter-school debating championships, quiz tournaments, spell-bees, and creative art exhibitions.</p>
+            
+            <div class="sub-header">The Legends of the Staff Room</div>
+            <p>The rich lore of St. Anthony's is defined by the dedicated teachers who left an everlasting mark on generations of pupils:</p>
+            <ul class="info-list">
+                <li><strong>The Legendary "Peter Sir" (Mr. Peter Joseph Achilles):</strong> Joining the English faculty in 1993, Peter Sir was renowned for his immaculate, flawless British English, his sharp crossword-solving mind, and his genius as a quiz coordinator. Serving as the school magazine's chief editor from 1996 until his passing, his strict, no-nonsense honesty and immense warmth earned him a legendary status among all returning alumni.</li>
+                <li><strong>The Unforgettable "Tiger Sir" (Mr. Sanjay Rai):</strong> Entering the school in 1993 as the Art, Craft, and Library master, his deep, booming baritone voice initially terrified new students, hiding a deeply gentle and loving soul underneath. Affectionately nicknamed "Tiger Sir," he was famous for catching students who forgot to return library books, building beautifully detailed bamboo miniature ships, and managing the most popular ice cream stall at the annual school fete.</li>
+            </ul>
+            <p>Physical development is given equal weight, with mandatory daily house games taking place right in the lap of nature. The playground is where lifelong friendships are made and natural leaders are forged, balancing tough, high-altitude sports training with rigorous intellectual focus.</p>
+        </div>
+
+        <!-- Footnotes & Credit Board -->
+        <div class="footer-credit-block">
+            <h5>Anthonian Digital Research Registry</h5>
+            <p>This document is an independent, deeply detailed archive compiled for historical preservation and public educational review regarding St. Anthony's School, Giddha Pahar, Kurseong.</p>
+            <div class="author-badge-footer">
+                Document Curated By: <span>Priyaank Pradhan, Class 6A</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
